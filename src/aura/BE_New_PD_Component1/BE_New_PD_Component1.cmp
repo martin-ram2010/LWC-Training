@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride" access="global" >
+	<lightning:recordForm 
+         objectApiName="Lead" 
+         aura:id="recordForm"
+         layoutType="Full" 
+         recordTypeId="0122w0000004LRiAAM"
+         columns="2"
+         mode="edit"
+         onsuccess="{!c.onSuccess}"
+                          onsubmit="{!c.onSubmit}"
+                          onerror="{!c.onError}" />
+</aura:component>

@@ -1,0 +1,21 @@
+<apex:page standardController="Lead" sidebar="false" recordSetVar="selectedLeads">
+    <apex:includeScript value="/soap/ajax/24.0/connection.js"/>
+    <apex:includeScript value="/soap/ajax/24.0/apex.js"/> 
+    <apex:includeLightning />
+    <div id="lightning"/>
+    <script src="/soap/ajax/35.0/connection.js" type="text/javascript"/>
+    <script src="/soap/ajax/35.0/apex.js" type="text/javascript"/>
+    <script>
+         sforce.connection.sessionId = '{!$Api.Session_ID}';
+        window.onload = selectedLeadFunction();
+        
+    function selectedLeadFunction(){
+        sforce.one.createRecord('Lead',null,{ 
+            FirstName : "John",
+            LastName : "Doe",  
+            RecordTypeId : "0122w0000004LRiAAM"
+        });
+    }
+    
+    </script>
+</apex:page>
