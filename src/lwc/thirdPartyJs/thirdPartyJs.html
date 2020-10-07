@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Using Third party JS Library (Jquery)">
+        <!-- <img src={customImage}/> -->
+        <!-- Example of third party css -->
+        <h1 class="h1Font">
+            <div class="data-container" > 
+                I'm in Lightning Web Components ( LWC )
+            </div>
+        </h1>
+        <!-- lwc dom manual doesn't take any body input statically, allow us set the body manually thorugh javascript only -->
+        <h1  class="headline" lwc:dom="manual"></h1>
+        <div  class="slds-p-top_x-large">
+            <lightning-button variant="brand" label="Show LWC" title="Primary action" onclick={handleClick}  class="slds-m-left_x-small"></lightning-button>  
+            <lightning-button variant="brand" label="Hide LWC" title="Primary action" onclick={removeClick}  class="slds-m-left_x-small"></lightning-button> 
+        </div>
+    </lightning-card>
+</template>

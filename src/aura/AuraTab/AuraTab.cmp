@@ -1,0 +1,8 @@
+<aura:component implements="force:appHostable">
+    <!-- <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-3">
+          <span><c:hellowWorld /></span>
+        </div>
+    </div> -->
+    <c:parentComponent />
+</aura:component>

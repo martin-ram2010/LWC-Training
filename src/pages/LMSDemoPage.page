@@ -1,0 +1,43 @@
+<apex:page>
+    <!-- Begin Default Content REMOVE THIS -->
+    <h1>Lightning Message Services - Demo - Winter 20</h1>
+    <div>
+        <p>Message To Send</p>
+        <input type="text" id="vfMessage" />
+        <button onclick="publishMessage()">Publish</button> 
+        <br/> 
+        <button onclick="subscribeMC()">Subscribe</button> 
+        <button onclick="unsubscribeMC()">Unsubscribe</button> 
+        <br/>
+        <p>Messages Received:</p>
+        <div id="textMessage"></div>
+    </div>
+    <script> 
+        // Load the MessageChannel token in a variable
+        var lmsDemoChannel = "{!$MessageChannel.LMSDemo__c}";
+        var subscriptionToMC;
+       function publishMessage() {
+            const payload = {
+                source: "Visualforce",
+                messageBody: document.getElementById('vfMessage').value
+            };
+            sforce.one.publish(lmsDemoChannel, payload);
+        }
+        function subscribeMC() {
+            if (!subscriptionToMC) {
+                subscriptionToMC = sforce.one.subscribe(lmsDemoChannel, onMCPublished);
+            }
+        }
+        function unsubscribeMC() {
+            if (subscriptionToMC) {
+                sforce.one.unsubscribe(subscriptionToMC);
+                subscriptionToMC = null;
+            }
+        }
+        function onMCPublished(message) {
+            console.log('vf page:'+JSON.stringify(message));
+            var textArea = document.querySelector("#textMessage");
+            textArea.innerHTML = message ? 'Message: ' + message.messageBody + ' From: ' + message.source : 'no message payload';
+        } 
+    </script>
+</apex:page>

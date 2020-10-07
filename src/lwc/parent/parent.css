@@ -1,0 +1,10 @@
+/* To import external style sheet */
+/* @import 'c/cssLibrary'; */
+
+h1 {
+    font-size: xx-large;
+}
+c-child {
+    display: block;
+    border: 2px solid red;
+}

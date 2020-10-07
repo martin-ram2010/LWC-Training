@@ -1,0 +1,12 @@
+<!-- eventPhaseForGrandParent -->
+<template>
+    <lightning-card title="Bubble Phase Demo">
+        <div class="slds-box slds-theme_default">
+            We are in grand parent component <br/>
+            <b>Received from parent -> </b> {name}
+            <br/>
+
+            <c-event-phase-for-parent onalert={handleAlert}></c-event-phase-for-parent>
+        </div>
+    </lightning-card>
+</template>

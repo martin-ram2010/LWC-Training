@@ -1,0 +1,12 @@
+<!-- eventPhaseForParent -->
+<template>
+    <div class="slds-box slds-theme_default">
+        We are in parent component <br/>
+        
+            <b>Received from child -> </b> {name}
+        <br/>
+    </div>
+    
+    <c-event-phase-for-child onalert={handleAlert} acc-name="LWC" ></c-event-phase-for-child>
+    <c-event-phase-for-child2></c-event-phase-for-child2>
+</template>

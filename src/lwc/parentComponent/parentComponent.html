@@ -1,0 +1,13 @@
+<template>
+    <h1>-------------------------Component Life Cycle ----------------------</h1>
+    <h2>Parent component</h2>
+    {variableVal}
+    <c-child-component></c-child-component>
+    <br/>
+
+    Parent Properties: <b>{variableVal}</b>
+    <div>
+        <lightning-button label="ChangeProperties in Parent Value" onclick={handleButtonClick}></lightning-button>
+    </div>
+    ----------------------------------------------------------------------<br/>
+</template>
