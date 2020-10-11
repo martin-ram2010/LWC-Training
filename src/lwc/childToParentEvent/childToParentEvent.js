@@ -6,6 +6,7 @@ export default class ChildToParentEvent extends LightningElement {
 
     constructor() {
         super();
+        // Attach event listener programmatically
         this.template.addEventListener('datechange', this.handleNotification.bind(this));
     }
 

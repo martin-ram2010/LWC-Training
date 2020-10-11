@@ -1,5 +1,5 @@
+// svgComponent.js
 import { LightningElement } from 'lwc';
-import SVG_LOGO from '@salesforce/resourceUrl/logo';
 import SF_LOGO from '@salesforce/resourceUrl/SalesforceLogo';
 
 export default class SvgComponent extends LightningElement {
@@ -8,3 +8,4 @@ export default class SvgComponent extends LightningElement {
         console.log(JSON.stringify(`${SF_LOGO}#sflogo`));
     }
 }
+

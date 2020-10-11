@@ -6,8 +6,11 @@
             <lightning-input type = "number" label = "input3" value={input3} onchange={handleChange}></lightning-input>
             <lightning-button label="Find Sum" onclick={calculateSum}> </lightning-button>
         </div>
-        <p>Sum of Number</p>
+        <p>Sum in Dollar</p>
         <lightning-formatted-number format-style = "currency" currency-code="USD" value = {sum}></lightning-formatted-number>
+
+        <p>Sum in INR</p>
+        <lightning-formatted-number format-style = "currency" currency-code="INR" value = {inr}></lightning-formatted-number>
     </lightning-card>
 
 </template>

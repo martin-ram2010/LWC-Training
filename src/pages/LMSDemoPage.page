@@ -15,23 +15,10 @@
     <script> 
         // Load the MessageChannel token in a variable
         var lmsDemoChannel = "{!$MessageChannel.LMSDemo__c}";
-        var subscriptionToMC;
-       function publishMessage() {
-            const payload = {
-                source: "Visualforce",
-                messageBody: document.getElementById('vfMessage').value
-            };
-            sforce.one.publish(lmsDemoChannel, payload);
-        }
+        
         function subscribeMC() {
             if (!subscriptionToMC) {
                 subscriptionToMC = sforce.one.subscribe(lmsDemoChannel, onMCPublished);
-            }
-        }
-        function unsubscribeMC() {
-            if (subscriptionToMC) {
-                sforce.one.unsubscribe(subscriptionToMC);
-                subscriptionToMC = null;
             }
         }
         function onMCPublished(message) {

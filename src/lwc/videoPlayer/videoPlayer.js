@@ -2,13 +2,7 @@ import { LightningElement, api } from 'lwc';
  
 export default class VideoPlayer extends LightningElement {
     @api videoUrl;
-
-    // @api
-    // get isPlaying() {
-    //     const player = this.template.querySelector('video');
-    //     return player !== null && player.paused === false;
-    // }
-
+    
     @api
     play() {
         const player = this.template.querySelector('video');

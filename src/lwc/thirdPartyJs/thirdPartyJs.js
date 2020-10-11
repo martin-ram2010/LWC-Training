@@ -12,11 +12,11 @@ export default class ThirdPartyJs extends LightningElement {
             loadScript(this, customJs + '/customjs/jquery-3.5.1.min.js'),
         ]) 
         .then(() => {
-                console.log('Files loaded.');
-            })
-            .catch(error => {
-                console.log(error.body.message);
-            });
+            console.log('Files loaded.');
+        })
+        .catch(error => {
+            console.log(error.body.message);
+        });
     }
     handleClick(event) {
         const h1Element = this.template.querySelector('h1.headline');

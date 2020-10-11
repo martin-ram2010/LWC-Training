@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+  <masterLabel>LMSDemo</masterLabel>
   <description>This is a Lightning Message Channel.</description>
   <isExposed>true</isExposed>
-  <masterLabel>LMSDemo</masterLabel>
+  <lightningMessageFields>
+      <fieldName>source</fieldName>
+      <description>This represent source from which event is triggered</description>
+  </lightningMessageFields>
+  <lightningMessageFields>
+      <fieldName>messageBody</fieldName>
+      <description>The represent message body</description>
+  </lightningMessageFields>
 </LightningMessageChannel>

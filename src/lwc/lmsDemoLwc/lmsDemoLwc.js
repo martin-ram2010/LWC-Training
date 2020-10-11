@@ -1,5 +1,5 @@
 import { LightningElement, track } from 'lwc';
-import { publish,createMessageContext,releaseMessageContext, subscribe, unsubscribe, APPLICATION_SCOPE } from 'lightning/messageService';
+import { publish, createMessageContext, releaseMessageContext, subscribe, unsubscribe, APPLICATION_SCOPE } from 'lightning/messageService';
 import lmsDemoMC from "@salesforce/messageChannel/LMSDemo__c";
 
 export default class LmsDemoLwc extends LightningElement {
@@ -8,10 +8,6 @@ export default class LmsDemoLwc extends LightningElement {
     channel;
     context = createMessageContext();
 
-    constructor() {
-        super();
-    }
-   
     handleSubscribe() {
         const parentPage = this;
         this.channel = subscribe(this.context, lmsDemoMC, function (event){
@@ -21,7 +17,7 @@ export default class LmsDemoLwc extends LightningElement {
                 parentPage.receivedMessage = 'Message: ' + message + '. Sent From: ' + source;
             }
         },
-        // { scope: APPLICATION_SCOPE }
+         { scope: APPLICATION_SCOPE }
         );
     }
 
