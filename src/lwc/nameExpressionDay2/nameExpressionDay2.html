@@ -1,0 +1,23 @@
+<template>
+    <div class="slds-p-around_x-small">
+        <p>{uppercaseNames}</p>
+        <lightning-input type="text" name="firstName" label="First Name" value={firstName} onchange={handleChange}></lightning-input>
+        <lightning-input type="text" name="lastName" label="Last Name" value={lastName} onchange={handleChange}></lightning-input>
+        
+    </div>
+    <div class="slds-p-around_x-small">
+        <p>{uppercaseNamesObj}</p>
+        <lightning-input type="text" name="firstNameObj" label="First Name" value={nameObj.firstName} onchange={handleObjectChange}></lightning-input>
+        <lightning-input type="text" name="lastNameObj" label="Last Name" value={nameObj.lastName} onchange={handleObjectChange}></lightning-input>
+        
+    </div>
+    <div class="slds-p-around_x-small">
+        <p>Today Date: {dateObj}</p>
+        <!-- Base variant: Makes a button look like a link -->
+        <lightning-button variant="base" label="Initailize Date" title="Looks like a link" onclick={initDate} class="slds-m-left_x-small"></lightning-button>
+
+        <!-- Neutral variant (default) -->
+        <lightning-button label="Update Date" title="Non-primary action" onclick={updateDate} class="slds-m-left_x-small"></lightning-button>
+
+    </div>
+</template>
