@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Render Dom Using For Eacch" icon-name="custom:custom14">
+       <template for:each={accounts} for:item="acc">
+           <div key={acc.Id}>
+               <p>Name : {acc.Name}</p>
+               <p>Location : {acc.Location}</p>
+           </div>
+       </template>
+       <template if:true={checkAccounts}>
+           Accounts are not available.
+       </template>
+    </lightning-card>
+</template>
