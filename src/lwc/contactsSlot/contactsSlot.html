@@ -1,7 +1,10 @@
+<!-- Parent Component -->
 <template>
+    <!-- Lightning Card Also Container Component -->
     <lightning-card title="SLOTS in LWC Implementation (contactList.html)">
         <div class="slds-var-p-around_xx-small">
             <div class="flex-container" style="display: flex;">
+                <!-- Container Component -->
                 <c-contact-slot>
                     <h2 slot="heading" class="slds-text-heading_large">Ranjan</h2>
                     <p slot="contactInfo">Website: https://login.salesforce.com</p>
@@ -9,6 +12,7 @@
                     <p slot="componentName" class="slds-align_absolute-center">
                         <strong>contactsSlot.html</strong>
                     </p>
+                    <lightning-input type="date" name="input1" label="Enter a date" onchange={handlechanges}></lightning-input>
                 </c-contact-slot>
             </div>
         </div>

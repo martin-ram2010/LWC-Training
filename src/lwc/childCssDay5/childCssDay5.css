@@ -1,0 +1,8 @@
+:host {
+    display :block;
+    background: lightskyblue;
+}
+
+:host(.active) {
+    background-color: green;
+}
