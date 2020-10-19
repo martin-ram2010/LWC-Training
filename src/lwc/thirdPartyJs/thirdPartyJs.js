@@ -7,16 +7,36 @@ import customJs from '@salesforce/resourceUrl/customJs';
 export default class ThirdPartyJs extends LightningElement {
     customImage = LwcImage; 
     renderedCallback() {
-        Promise.all([
-            loadStyle(this, customJs + '/customjs/customCSS.css'),
-            loadScript(this, customJs + '/customjs/jquery-3.5.1.min.js'),
-        ]) 
+        // Promise.all([
+        //     loadStyle(this, customJs + '/customjs/customCSS.css'),
+        //     loadScript(this, customJs + '/customjs/jquery-3.5.1.min.js'),
+        // ]) 
+        // .then(() => {
+        //         console.log('Files loaded.');
+        //     })
+        //     .catch(error => {
+        //         console.log(error.body.message);
+        //     });
+        //Load JS File
+        loadScript(this, customJs + '/customjs/jquery-3.5.1.min.js')
         .then(() => {
-            console.log('Files loaded.');
+                console.log('JS Files loaded.');
+                return loadStyle(this, customJs + '/customjs/customCSS.css');
         })
+        .then(() => {
+            console.log('CSS Files loaded.');
+    })
         .catch(error => {
             console.log(error.body.message);
         });
+        //Load CSS File
+        // loadStyle(this, customJs + '/customjs/customCSS.css')
+        // .then(() => {
+        //         console.log('CSS Files loaded.');
+        // })
+        // .catch(error => {
+        //     console.log(error.body.message);
+        // });
     }
     handleClick(event) {
         const h1Element = this.template.querySelector('h1.headline');
