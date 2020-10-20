@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Calculating Addtion Of Number">
+        <h2>Total Sum: {sum}</h2>
+        <lightning-input type="number" name="input1" label="Enter 1st number" onchange={handleChange}></lightning-input>
+        <lightning-input type="number" name="input2" label="Enter 2nd number" onchange={handleChange}></lightning-input>
+        <lightning-input type="number" name="input3" label="Enter 3rd number" onchange={handleChange}></lightning-input>
+
+        <lightning-button variant="brand" label="Calculate Sum" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+
+    </lightning-card>
+
+    <lightning-card title="Using Static Resource">
+        <h1 class="h1Font">We're in LWC.</h1>
+        <h1 class="headline" lwc:dom="manual"></h1>
+
+
+        <!-- Brand variant: Identifies the primary action in a group of buttons -->
+        <lightning-button variant="brand" label="Show" title="Primary action" onclick={addImage} class="slds-m-left_x-small"></lightning-button>
+        <!-- Brand variant: Identifies the primary action in a group of buttons -->
+        <lightning-button variant="brand" label="Hide" title="Primary action" onclick={removeImage} class="slds-m-left_x-small"></lightning-button>
+
+    </lightning-card>
+</template>
