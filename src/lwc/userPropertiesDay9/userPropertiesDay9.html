@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Show User Property Using Internationlization Property">
+        Current User Language: {languageProp} <br></br>
+        Current User Locale: <b>{localeProp}</b> with Date: <b>{formattedDate}</b><br></br>
+
+        <!-- Current User Properties -->
+        <div>
+            Current User Id: {currentUserId}
+            Is Current User a Guest User: {isCurrentUserGuest}
+        </div><br></br>
+        
+        <!-- Permission Properties -->
+        <div>
+            <p>
+            Has Access to LWC: {hasAccessToLwc}
+            </p>
+            <p>
+                Has Access to View Setup : {hasAccessToViewSetup}
+            </p>
+            <p>
+                Has Access to View All Data : {hasAccessToViewAllData}
+            </p>
+        </div><br></br>
+
+        <!-- Form Factor -->
+        <div>
+            <p class={formFactor}> The Screen size : {formFactor}</p>
+        </div>
+    </lightning-card>
+</template>
