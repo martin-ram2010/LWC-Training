@@ -7,7 +7,7 @@ export default class ChildComponentForEventDay10 extends LightningElement {
     } 
     handleDateChange(event){ // Parent listens programmetically then add bubbles to true
         console.log('handleDateChange');
-        let dateChangeEvent = new CustomEvent('datechange',{detail : event.target.value, bubbles: true});
+        let dateChangeEvent = new CustomEvent('datechange',{detail : event.target.value, bubbles: true, composed :true});
         this.dispatchEvent(dateChangeEvent);
     }
 
