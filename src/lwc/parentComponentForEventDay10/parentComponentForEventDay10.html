@@ -1,0 +1,16 @@
+<template>
+    <c-child-component-for-event-day10 onnamechange ={handleNameChange}></c-child-component-for-event-day10>
+    <lightning-card title="Parent Component for Details">
+        <div class="slds-grid slds-wrap slds-p-left_medium">
+            <div class="slds-col slds-size_6-of-12">
+                Full Name : <b>{fullName}</b>
+            </div>
+            <div class="slds-col slds-size_6-of-12">
+                DOB : <b>{dob}</b>
+            </div>
+            <div class="slds-col slds-size_6-of-12">
+                Age : <b>{age}</b>
+            </div>
+        </div>
+    </lightning-card>
+</template>
