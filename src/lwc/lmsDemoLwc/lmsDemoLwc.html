@@ -6,8 +6,7 @@
             <br>
             <lightning-button label="Subscribe" onclick={handleSubscribe}></lightning-button>
             <lightning-button label="Unsubscribe" onclick={handleUnsubscribe}></lightning-button>
-            <p> Message Received</p>
-            <lightning-formatted-text value={receivedMessage}></lightning-formatted-text>
+            <p> Message Received : <b>{receivedMessage}</b></p>
         </div>
     </lightning-card>
 </template>

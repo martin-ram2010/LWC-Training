@@ -1,4 +1,4 @@
-<apex:page>
+<apex:page >
     <!-- Begin Default Content REMOVE THIS -->
     <h1>Lightning Message Services - Demo - Winter 20</h1>
     <div>
@@ -10,15 +10,28 @@
         <button onclick="unsubscribeMC()">Unsubscribe</button> 
         <br/>
         <p>Messages Received:</p>
-        <div id="textMessage"></div>
+        <b><div id="textMessage"></div></b>
     </div>
     <script> 
         // Load the MessageChannel token in a variable
         var lmsDemoChannel = "{!$MessageChannel.LMSDemo__c}";
-        
+        var subscriptionToMC;
+       function publishMessage() {
+            const payload = {
+                source: "Visualforce",
+                messageBody: document.getElementById('vfMessage').value
+            };
+            sforce.one.publish(lmsDemoChannel, payload);
+        }
         function subscribeMC() {
             if (!subscriptionToMC) {
                 subscriptionToMC = sforce.one.subscribe(lmsDemoChannel, onMCPublished);
+            }
+        }
+        function unsubscribeMC() {
+            if (subscriptionToMC) {
+                sforce.one.unsubscribe(subscriptionToMC);
+                subscriptionToMC = null;
             }
         }
         function onMCPublished(message) {
