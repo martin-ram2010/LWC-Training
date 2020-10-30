@@ -11,8 +11,15 @@
                 </lightning-datatable>
             </template>
             <template if:true={contact.error}>
-                <!-- handle Apex error -->
+                 <!-- handle Apex error  -->
             </template>
+            <!-- <lightning-datatable
+                    key-field="Id"
+                    data={contactData}
+                    columns={columns}
+                    onsave={handleSave}
+                    draft-values={draftValues}>
+                </lightning-datatable> -->
         </div>
     </lightning-card>
 </template>

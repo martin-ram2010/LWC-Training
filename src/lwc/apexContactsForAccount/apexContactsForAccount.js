@@ -1,4 +1,4 @@
-import { LightningElement,api, wire } from 'lwc';
+import { LightningElement,api, wire, track } from 'lwc';
 import getContacts from '@salesforce/apex/ContactController.getContacts';
 import updateContacts from '@salesforce/apex/ContactController.updateContacts';
 import { refreshApex } from '@salesforce/apex';
@@ -18,11 +18,21 @@ const COLS = [
 ];
 export default class ApexContactsForAccount extends LightningElement {
     @api recordId;
+    // @track contactData;
     columns = COLS;
     draftValues = [];
 
     @wire(getContacts, { accId: '$recordId' })
-    contact;
+    contact; // contact = {error : errorData , data : contactData};
+    // getContactFunction({error , data}){ 
+    //     if(data){
+    //         console.log('contacts :'+JSON.stringify(data));
+    //         this.contactData = data;
+    //     }
+    //     if(error){
+
+    //     }
+    // }
 
     //To Save a single record at a time
     /*handleSave(event) {
@@ -76,11 +86,11 @@ export default class ApexContactsForAccount extends LightningElement {
                 })
             );
     
-        // Display fresh data in the datatable
-        refreshApex(this.contact).then(() => {
-            // Clear all draft values in the datatable
-            this.draftValues = [];
-          });
+            // Display fresh data in the datatable
+            refreshApex(this.contact).then(() => {
+                // Clear all draft values in the datatable
+                this.draftValues = [];
+            });
     
         
        }).catch(error => {
