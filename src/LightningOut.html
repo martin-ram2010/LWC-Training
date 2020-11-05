@@ -1,0 +1,27 @@
+<!-- https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/lightning_out_markup.htm 
+System.debug(UserInfo.getOrganizationId()+''+UserInfo.getSessionId().SubString(15));-->
+<html>
+    <body>
+        <div id="LightningAppDivId">
+            <!-- Lightning Component will be included here. -->
+        </div>
+        <script src="https://developerorg-2019-dev-ed.my.salesforce.com/lightning/lightning.out.js"></script>
+         <script>
+             $Lightning.use(
+                 "c:LightningOutDemoApp", // Name of Aura Dependency app where c is namespace.
+                 function() { // Callback function
+                     $Lightning.createComponent(
+                         "c:accountList", // Name of Lightning Component where c is namespace.
+                         {}, // attribute parameters
+                         "LightningAppDivId" ,// Id of the element where Lightning Component will be rendered.
+                         function(component) {
+                            console.log('Component created');
+                        }
+                     );
+                 },
+                 'https://developerorg-2019-dev-ed.lightning.force.com',
+                 '00D2w000000EIivEAG!AQEAQH21gXwzop3uEjnpzUkEcRqTxvsoBZwwztd_5mMkZRVjN1Skr.E95_.N7yXWKU3Cs0OVbvyYh3Kr4ImWPmjVF5_d4zqc'
+             );
+         </script>
+    </body>
+</html>

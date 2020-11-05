@@ -1,0 +1,19 @@
+<apex:page>
+    <!-- Get all the Lighting libraries -->
+    <apex:includeLightning/>
+    <!-- Lighting component will be injected in the below location -->
+    <div id="lout"></div>
+
+    <script>
+        $Lightning.use('c:lightningOutDay16', function(){
+            $Lightning.createComponent('c:accountList', 
+            {},
+            'lout',
+            function(cmp){
+                console.log('accountList injected successfully.');
+            }
+            );
+        });// ,  lightningEndPointUrl, authToken);
+
+    </script>
+</apex:page>
