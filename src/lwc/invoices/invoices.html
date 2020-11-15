@@ -1,0 +1,52 @@
+<template>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Invoice Name">Invoice Name</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Status">Status</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Billing DateTime">Billing DateTime</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Price">Price</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Actions">Actions</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={invoiceData} for:item="inv">
+                <tr key={inv.Id} class="slds-hint-parent">
+                    
+                    <td data-label="Invoice Name">
+                    <div class="slds-truncate" title={inv.Name}>
+                        <a onclick={handleView} title="view" data-id={inv.Id} style="color:rgba(22, 32, 54, 1);">{inv.Name}</a>
+                    </div>
+                    </td>
+                    <td data-label="Status">
+                    <div class="slds-truncate" title={inv.Billing_Status__c}>{inv.Billing_Status__c}</div>
+                    </td>
+                    <td data-label="Billing DateTime">
+                    <div class="slds-truncate" title={inv.Billing_DateTime__c}>{inv.Billing_DateTime__c}</div>
+                    </td>
+                    <td data-label="Price">
+                    <div class="slds-truncate" title={inv.Price__c}>{inv.Price__c}</div>
+                    </td>
+                    <td data-label="Actions" scope="row">
+                        <div class="slds-truncate" title="">
+                            <lightning-button variant="brand" label="View Invoice Line Items" title="View Invoice Line Items" data-id={inv.Id} onclick={handleActionClick} class="slds-m-left_x-small"></lightning-button>
+                        </div>
+                    </td>
+                </tr>
+            </template>
+        </tbody>
+        </table>
+        <template if:true={showInvoiceLineItems} class="slds-p-top_xx-large">
+            <c-invl-data-table  record-id={selectedInvoiceRecordId} onhide={handleHide}></c-invl-data-table>
+        </template>
+</template>

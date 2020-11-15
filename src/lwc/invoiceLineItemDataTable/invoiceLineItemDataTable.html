@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title={title} class="slds-p-top_medium">
+        <lightning-datatable
+                key-field="Id"
+                data={invoiceLineItemRecords}
+                columns={columns}
+                hide-checkbox-column="true">
+        </lightning-datatable>
+    </lightning-card>
+</template>
