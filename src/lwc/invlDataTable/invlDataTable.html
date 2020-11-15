@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="Related Invoice Line Items">
+        <lightning-icon icon-name="utility:hide" class="slds-float_right" alternative-text="Hide" title="Hide" onclick={handleHide} size="small"></lightning-icon>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                <div class="slds-truncate" title="Actions">Actions</div>
+                </th>
+                <th class="" scope="col">
+                <div class="slds-truncate" title="Invoice Line Item Name">Invoice Line Item Name</div>
+                </th>
+                <th class="" scope="col">
+                <div class="slds-truncate" title="Status">Status</div>
+                </th>
+                <th class="" scope="col">
+                <div class="slds-truncate" title="Total Price">Total Price</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                <template for:each={ivoiceLineItems.data} for:item="invl">
+                    <tr key={invl.Id} class="slds-hint-parent">
+                        <th data-label="Actions" scope="row">
+                        <div class="slds-truncate" title="">
+                            <a onclick={handleActionClick} title="edit" data-id={invl.Id} class="slds-p-right_x-small">Edit</a>
+                            <a onclick={handleActionClick} title="delete" data-id={invl.Id}>Delete</a>
+                        </div>
+                        </th>
+                        <td data-label="Invoice Line Item Name">
+                        <div class="slds-truncate" title={invl.Invoice_Line_Item_Name__c}>
+                            <a onclick={handleActionClick} title="view" data-id={invl.Id} style="color:rgba(22, 32, 54, 1);">{invl.Invoice_Line_Item_Name__c}</a>
+                        </div>
+                        </td>
+                        <td data-label="Status">
+                        <div class="slds-truncate" title={invl.Invoice_Line_Item_Status__c}>{invl.Invoice_Line_Item_Status__c}</div>
+                        </td>
+                        <td data-label="Total Price">
+                        <div class="slds-truncate" title={invl.Total_Price__c}>{invl.Total_Price__c}</div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>
